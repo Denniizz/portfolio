@@ -1,0 +1,18 @@
+.methods-panel {
+    position: absolute;
+    top: 70px;
+    right: 50px;
+    width: 150px;
+}
+#methodSelect {
+    width: 100%;
+    padding: 8px;
+}
+
+.DSA-content {
+  background: var(--card);
+  width: 500px;
+  padding: 30px;
+  border-radius: 20px;
+  position: relative;
+}
