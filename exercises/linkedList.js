@@ -1,59 +1,64 @@
 class Node 
 {
-    constructor(value)
-    {
-        this.head = value;
-        this.next = null;
-    }
+   constructor(data) {
+       this.data = data;
+       this.next = null;
+   }
 }
 
-class LinkedList 
-{
-    constructor(value)
-    {
-        this.head = new Node(value);
-        this.tail = this.head;
-        this.lenght = 1;
-    }
+class LinkedList {
+   constructor() {
+       this.head = null; // Points to the first node
+   }
+   // Add a new node at the end
+   append(data) 
+   {
+       const newNode = new Node(data);
 
-    push(value)
-    {
-        let newNode = new Node(value);
-        this.tail.next = newNode;
-        this.tail = newNode;
-        this.lenght++;
-    }
+       if (!this.head) {
+           this.head = newNode;
+           return;
+       }
+       let current = this.head;
+       while (current.next) {
+           current = current.next;
+       }
+       current.next = newNode;
+   }
 
-    pop()
-    {
-        if(!this.head){
-            return undefined;
-        }
+   // Print all nodes in the list
+   printList() {
+       let current = this.head;
+       let result = "";
+       while (current) {
+           result += current.data + " -> ";
+           current = current.next;
+       }
+       console.log(result + "null");
+   }
 
-        let temp = this.head;
-        let prev = this.tail;
-
-        while (temp.next)
-        {
-            prev = temp;
-            temp = prev.next;
-        }
-
-        this.tail = prev;
-        this.tail.next = null;
-        this.lenght--;
-
-        if(this.lenght === 0)
-        {
-            this.head = null;
-            this.tail = null;
-        }
-
-        return temp;
-    }
+   // Delete a node by value
+   delete(data) {
+       if (!this.head) return;
+       if (this.head.data === data) {
+           this.head = this.head.next;
+           return;
+       }
+       let current = this.head;
+       while (current.next && current.next.data !== data) {
+           current = current.next;
+       }
+       if (current.next) {
+           current.next = current.next.next;
+       }
+   }
 }
 
-const myLinkedList = new LinkedList(1);
-myLinkedList.push(12);
-myLinkedList.pop();
-console.log(myLinkedList);
+const list = new LinkedList();
+list.append(10);
+list.append(20);
+list.append(30);
+list.printList(); // Output: 10 -> 20 -> 30 -> null
+list.delete(20);
+list.printList(); // Output: 10 -> 30 -> null
+export { list };

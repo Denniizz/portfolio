@@ -3,11 +3,6 @@
     font-size: 14px;
 }
 
-#notesContainer {
-    margin-top: 10px;
-    font-size: 14px;
-}
-
 #forecastContainer {
     display: flex;
     flex-direction: row;
@@ -20,6 +15,14 @@
     white-space: nowrap;
 }
 
+.weather-content {
+  background: var(--card);
+  width: 500px;
+  padding: 30px;
+  border-radius: 20px;
+  position: relative;
+}
+
 .forecast-card {
     flex: 0 0 auto;   /* IMPORTANT: prevents shrinking */
     width: 80px;
@@ -29,12 +32,4 @@
     border-radius: 10px;
     font-size: 12px;
     text-align: center;
-}
-
-.weather-content {
-  background: var(--card);
-  width: 500px;
-  padding: 30px;
-  border-radius: 20px;
-  position: relative;
 }

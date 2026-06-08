@@ -1,0 +1,53 @@
+/* Content View */
+.array-content {
+  background: var(--card);
+  width: 550px;
+  padding: 30px;
+  border-radius: 20px;
+  position: relative;
+}
+
+/* Array itself */
+#arrayContainer {
+  display: flex;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.cell {
+  width: 60px;
+  height: 60px;
+
+  border: 2px solid black;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  border-radius: 8px;
+}
+.index {
+  font-size: 12px;
+  opacity: 0.6;
+}
+.value {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+#explanation {
+  margin-top: 20px;
+  min-height: 30px;
+}
+#valueInput{
+  width: 100px;
+}
+
+/* Buttons select */
+.methods-panel {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 100px;
+}

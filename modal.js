@@ -1,4 +1,4 @@
-export function setupModal(cardId, modalId, closeBtnId) {
+export function setupModal(cardId, modalId, closeBtnId, onClose = null) {
 
     const card = document.getElementById(cardId);
     const modal = document.getElementById(modalId);
@@ -22,12 +22,16 @@ export function setupModal(cardId, modalId, closeBtnId) {
     // Close button
     closeBtn.addEventListener("click", () => {
         modal.style.display = "none";
+
+        if (onClose) onClose();
     });
 
     // Click outside modal content
     modal.addEventListener("click", (e) => {
         if (e.target === modal) {
             modal.style.display = "none";
+
+            if (onClose) onClose();
         }
     });
 }

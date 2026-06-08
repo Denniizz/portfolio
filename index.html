@@ -6,7 +6,8 @@
 
 <link rel="stylesheet" href="css/notes.css">
 <link rel="stylesheet" href="css/weather.css">
-<link rel="stylesheet" href="css/DSA.css">
+<link rel="stylesheet" href="css/array.css">
+<link rel="stylesheet" href="css/linkedList.css">
 <link rel="stylesheet" href="css/modalContainer.css">
 <link rel="stylesheet" href="css/buttons.css">
 
@@ -18,8 +19,7 @@
 
 <!-- NAVBAR -->
 <nav class="navbar">
-
-    <ul class="nav-links">
+    <ul class="links-bar">
         <li><a href="#about">About</a></li>
         <li><a href="#projects">Projects</a></li>
         <li><a href="#contact">Contact</a></li>
@@ -28,7 +28,7 @@
 
 <button id="themeBtn" class="theme-btn">🌙</button>
 
-<!-- HERO (TOP SECTION) -->
+<!-- (HERO SECTION) -->
 <section class="hero">
     <h1>Hello, I'm <span>Deniz</span></h1>
     <p>
@@ -50,7 +50,7 @@
 <section id="projects" class="section">
     <h2>Projects</h2>
 
-    <div class="projects-display">
+    <div class="projectsView">
 
         <div class="project-card" id="notesCard">
             <h3>Notes App</h3>
@@ -72,9 +72,19 @@
             </div>
         </div>
 
-        <div class="project-card" id="dsaCard">
-            <h3>DSA</h3>
-            <p>See how dsa works.</p>
+        <div class="project-card" id="arrayCard">
+            <h3>Array</h3>
+            <p>See how array's works.</p>
+
+            <div class="tags">
+                <span>JavaScript</span>
+                <span>DSA</span>
+            </div>
+        </div>
+
+        <div class="project-card" id="linkedListCard">
+            <h3>Linked List</h3>
+            <p>See how linked list's works.</p>
 
             <div class="tags">
                 <span>JavaScript</span>
@@ -131,11 +141,11 @@
     </div>
 </div>
 
-<div class="modal" id="DSAWindow">
-    <div class="DSA-content">  <!-- Used in CSS -->
+<div class="modal" id="arrayWindow">
+    <div class="array-content">  <!-- Used in CSS -->
 
-        <span class="close-btn" id="DSACloseBtn">&times;</span>
-        <h2>DSA Visualizer</h2>
+        <span class="close-btn" id="arrayCloseBtn">&times;</span>
+        <h2>Array Visualizer</h2>
 
         <div class="main-area">
 
@@ -143,18 +153,52 @@
 
             <div id="codePanel"></div>
 
-            <div id="explanation"></div>
+            <div id="explanation">
+                Select an operation to begin.
+            </div>
         </div>
 
         <div class="methods-panel">
-            <select id="methodSelect">
-                <option value="">Select Method</option>
-                <option value="push">push()</option>
-                <option value="get">get()</option>
-                <option value="pop">pop()</option>
-                <option value="shift">shift()</option>
-                <option value="deleteByIndex">deleteByIndex()</option>
-            </select>
+
+            <input class="input" id="valueInput" placeholder="Value">
+
+            <div class="buttons-group">
+                <button class="btn" id="pushBtn">Push</button>
+                <button class="btn" id="popBtn">Pop</button>
+                <button class="btn" id="shiftBtn">Shift</button>
+                <button class="btn" id="getBtn">Get</button>
+                <button class="btn" id="deleteBtn">Delete</button>
+            </div>
+
+        </div>
+
+    </div>
+</div>
+
+<div class="modal" id="linkedListWindow">
+    <div class="linkedList-content">  <!-- Used in CSS -->
+
+        <span class="close-btn" id="linkedListCloseBtn">&times;</span>
+        <h2>Linked List Visualizer</h2>
+
+        <div class="main-area">
+
+            <div id="linkedListContainer"></div>
+
+            <div id="codePanel"></div>
+
+            <div id="explanation">
+                Select an operation to begin.
+            </div>
+        </div>
+
+        <div class="methods-panel">
+            <input class="input" id="valueInput" placeholder="Value">
+
+            <div class="buttons-group">
+                <button class="btn" id="appendBtn">Append</button>
+                <button class="btn" id="findByIndexBtn">findByIndex</button>
+            </div>
         </div>
 
     </div>
@@ -192,7 +236,10 @@
 
 <script type="module" src="projects/weather.js"></script>
 
-<script type="module" src="projects/DSA.js"></script>
+<script type="module" src="projects/array.js"></script>
+
+<script type="module" src="projects/linkedList.js"></script>
+
 
 <script src="email.js"></script>
 

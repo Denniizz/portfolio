@@ -1,0 +1,38 @@
+/* Content View */
+.linkedList-content {
+  background: var(--card);
+  width: 500px;
+  padding: 30px;
+  border-radius: 20px;
+  position: relative;
+}
+
+#linkedListContainer {
+  display: flex;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.node {
+  width: 50px;
+  height: 50px;
+
+  border: 2px solid black;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  border-radius: 8px;
+}
+.arrow {
+  font-size: 20px;
+  opacity: 0.6;
+  margin-top: 10px;
+}
+.null {
+  font-size: 20px;
+  font-weight: bold;
+  margin-top: 10px;
+}

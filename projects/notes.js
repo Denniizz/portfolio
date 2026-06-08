@@ -56,44 +56,38 @@ function saveNotesToStorage()
     localStorage.setItem("notes", JSON.stringify(notes));
 }
 
+import { elements } from "../dom.js";
+
 function createNoteElements(note)
 {
-    const noteEl = document.createElement("div");
-    noteEl.classList.add("note");    // Adds a class="" to the div
+    const time = elements("small", null, [
+        elements("div", null, `Created: ${note.createdAt}`)
+    ]);
 
-    const text = document.createElement("div");
-    text.classList.add("note-text"); // Adds a class="" to the div
-    text.textContent = note.text;
-
-    const time = document.createElement("small");
-
-    let timeHTML = `Created: ${note.createdAt}`;
-
-    if (note.updatedAt){
-        timeHTML += `<br>Edited: ${note.updatedAt}`;
+    if (note.updatedAt) 
+    {
+        time.appendChild
+        (
+            elements("div", null, `Edited: ${note.updatedAt}`)
+        );
     }
 
-    time.innerHTML = timeHTML;
-
-
-    const editBtn = document.createElement("button");
-    editBtn.classList.add("btn", "editBtn"); // Adds a class="" to the div
-    editBtn.textContent = "Edit";
+    const editBtn = elements("button", "btn editBtn", "Edit");
     editBtn.dataset.id = note.id;
 
-    const btn = document.createElement("button");
-    btn.classList.add("btn", "deleteBtn");   // Adds a class="" to the div
-    btn.textContent = "Delete";
-    btn.dataset.id = note.id;
+    const deleteBtn = elements("button", "btn deleteBtn", "Delete");
+    deleteBtn.dataset.id = note.id;
 
-    const editAndDelete = document.createElement("div");
-    editAndDelete.classList.add("note-actions");
+    const actions = elements("div", "note-actions", [
+        time,
+        editBtn,
+        deleteBtn
+    ]);
 
-    editAndDelete.append(time, editBtn, btn);
-
-    noteEl.append(text, editAndDelete);
-
-    return noteEl;
+    return elements("div", "note", [
+        elements("div", "note-text", note.text),
+        actions
+    ]);
 }
 
 function renderNotes() 

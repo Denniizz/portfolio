@@ -45,7 +45,7 @@ body {
 
 /* Hero Section */
 .hero {
-  height: 100vh;
+  height: 90vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -53,16 +53,13 @@ body {
   text-align: center;
   padding: 20px;
 }
-
 .hero h1 {
   font-size: 70px;
   margin-bottom: 20px;
 }
-
 .hero span {
   color: var(--accent);
 }
-
 .hero p {
   max-width: 600px;
   color: var(--muted);
@@ -70,14 +67,12 @@ body {
   margin-bottom: 30px;
   font-size: 18px;
 }
-
 .hero-buttons {
   display: flex;
   gap: 15px;
   flex-wrap: wrap;
   justify-content: center;
 }
-
 .hero button {
   padding: 15px 30px;
   border: none;
@@ -88,7 +83,6 @@ body {
   cursor: pointer;
   transition: 0.3s;
 }
-
 .hero button:hover {
   transform: scale(1.05);
 }
@@ -103,27 +97,24 @@ body {
   background: var(--navbar-bg);
   backdrop-filter: blur(10px);
 
-  padding: 15px 30px;
+  padding: 15px 35px;
   border-radius: 50px;
   box-shadow: var(--shadow);
 
   z-index: 1000;
 }
-
-.nav-links {
+.links-bar {
   display: flex;
-  gap: 40px;
+  gap: 50px;
   list-style: none;
 }
-
-.nav-links a {
+.links-bar a {
   text-decoration: none;
   color: inherit;
   font-weight: bold;
   transition: 0.3s;
 }
-
-.nav-links a:hover {
+.links-bar a:hover {
   color: var(--accent);
 }
 
@@ -134,7 +125,7 @@ body {
 }
 
 /* Cards */
-.projects-display {
+.projectsView {
   display: flex;
   justify-content: center;
   gap: 20px;
@@ -164,9 +155,9 @@ body {
   align-items: center;
 }
 .note {
-    padding: 8px;
-    border-bottom: 1px solid #ddd;
-    font-size: 15px;
+  padding: 8px;
+  border-bottom: 1px solid #ddd;
+  font-size: 15px;
 }
 .notes-content {
   background: var(--card);
@@ -174,6 +165,10 @@ body {
   padding: 30px;
   border-radius: 20px;
   position: relative;
+}
+#notesContainer {
+  margin-top: 10px;
+  font-size: 14px;
 }
 
 /* Error message */
@@ -246,7 +241,6 @@ body {
 
 .contact-form textarea {
   height: 120px;
-
   resize: none;
 }
 
